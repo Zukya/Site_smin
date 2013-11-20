@@ -38,15 +38,15 @@ Cibles
 
 Ce projet s'adresse à différents type de personnes :
 
-	Entreprises cherchant des informations précises sur la formation SMIN
+1.Entreprises cherchant des informations précises sur la formation SMIN
 	
-	Entreprises cherchant des stagiaires, alternants ou 	tout simplement des étudiants pour des projets informatiques
+2.Entreprises cherchant des stagiaires, alternants ou 	tout simplement des étudiants pour des projets informatiques
 	
-	Futurs étudiants SMIN en quête d'informations précises sur la formation, sur les réalisations des étudiants de 	cette formation et sur leur parcours professionnel.
+3.Futurs étudiants SMIN en quête d'informations précises sur la formation, sur les réalisations des étudiants de 	cette formation et sur leur parcours professionnel.
 	
-	Étudiants actuels SMIN cherchant une entreprise pour un stage ou une alternance, ou souhaitant tout simplement participer à la communauté
+4.Étudiants actuels SMIN cherchant une entreprise pour un stage ou une alternance, ou souhaitant tout simplement participer à la communauté
 	
-	Anciens étudiants SMIN voulant participer à la communauté, contacter des entreprises ou même proposer des emplois aux autres membres
+5.Anciens étudiants SMIN voulant participer à la communauté, contacter des entreprises ou même proposer des emplois aux autres membres
 	
-	Personnes extérieurs souhaitant trouver ou partager de nouvelles informations ou connaissances entre autre sur le domaine des nouvelles technologies via la partie « Blog » du site.
+6.Personnes extérieurs souhaitant trouver ou partager de nouvelles informations ou connaissances entre autre sur le domaine des nouvelles technologies via la partie « Blog » du site.
 
