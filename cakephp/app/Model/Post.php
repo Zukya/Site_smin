@@ -4,7 +4,7 @@ class Post extends AppModel {
         'title' => array(
             'rule' => 'notEmpty'
         ),
-        'body' => array(
+        'content' => array(
             'rule' => 'notEmpty'
         )
     );
