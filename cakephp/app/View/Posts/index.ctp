@@ -1,11 +1,47 @@
 <!-- File: /app/View/Posts/index.ctp  (edit links added) -->
-<h1>Notes</h1>
-<p>
-- Il manque une image pour l'entreprise qui ajoute un job. ( Entreprise, Contract, logo entreprise ? )
+<?php 
+//var_dump($this->Session->read());
+$fname = $this->Session->read('Auth.User.fname');
+if (isset($fname))
+{
+echo '<h2>Vous &ecirc;tes connect&eacute; en tant que ';
+echo $this->Session->read('Auth.User.fname');
+echo ' ';
+echo $this->Session->read('Auth.User.name');
+echo '.</h2><p>';
+echo $this->Html->link("Add Post", array('action' => 'add')); ?>
+-
+<?php  echo $this->Html->link(
+    'Logout',
+    array('controller' => 'Users', 'action' => 'logout') );?>
 </p>
 
-<h1>Blog posts</h1>
-<p><?php echo $this->Html->link("Add Post", array('action' => 'add')); ?></p>
+<?php 
+
+} else  { echo '<h2>Vous n\'&ecirc;tes pas connect&eacute;</h2>';
+echo $this->Html->link(
+    'Login',
+    array('controller' => 'Users', 'action' => 'login') );
+
+
+}
+?>
+
+
+
+<h3>Notes</h3>
+	<h1>Base de donnee</h1>
+	<p>
+		- Il manque une image pour l'entreprise qui ajoute un job. ( Entreprise, Contract, logo entreprise ? )
+	</p>
+	<h1>Add User</h1>
+	<p>
+		- Username qui donne l'erreur de l'adresse email<br/>
+		- L'Avatar doit changer d'input (input text pas bon)
+	</p>
+	
+<h3>Blog posts</h3>
+
 <table>
     <tr>
         <th>Id</th>
