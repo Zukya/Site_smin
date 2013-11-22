@@ -1,5 +1,6 @@
 <!-- File: /app/View/Posts/index.ctp  (edit links added) -->
 <?php 
+/*
 //var_dump($this->Session->read());
 $fname = $this->Session->read('Auth.User.fname');
 if (isset($fname))
@@ -25,6 +26,7 @@ echo $this->Html->link(
 
 
 }
+*/
 ?>
 
 

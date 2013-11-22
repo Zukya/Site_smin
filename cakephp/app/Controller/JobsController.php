@@ -24,7 +24,7 @@ class JobsController extends AppController {
     }
     
     public function add() {
-    	if ($this->request->is('job')) {
+    	if ($this->request->is('Post')) {
     		$this->Job->create();
     		if ($this->Job->save($this->request->data)) {
     			$this->Session->setFlash(__('Your job has been saved.'));
