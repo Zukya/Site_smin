@@ -1,4 +1,4 @@
-<!-- File: /app/View/Posts/index.ctp  (edit links added) -->
+<!-- File: /app/View/Posts/seek.ctp -->
 
 <style>
 .delinked {
@@ -85,7 +85,7 @@ echo $this->Html->link(
 		
 		</div>
 	</div>
-   <div class="span2">
+ <div class="span2">
 	<div class="row-fluid show-grid"> 
 	 <div class="span3 text-center" style="color:white; background-color: #333;"><i class=" icon-search icon-white"></i></div>
 	 <div class="span3 text-center" style="color:white; background-color: #333;"><i class=" icon-camera icon-white"></i></div>
@@ -113,7 +113,9 @@ echo $this->Html->link(
 </div>
 </div>
 </div>
-
-
-
-
+<?php 
+/*
+ * A mettre si on met la pagiantion en AJAX :
+ * echo $this->Js->writeBuffer();
+*/
+?>

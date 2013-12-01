@@ -29,7 +29,7 @@ public function add() {
             $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
         }
     }
-    
+ 
 public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {

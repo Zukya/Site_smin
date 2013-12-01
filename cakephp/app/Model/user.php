@@ -1,8 +1,16 @@
 <?php
 
 App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
-class user extends AppModel {
-	
+class User extends AppModel {
+    public $hasMany = array(
+        'Post' => array(
+            'className' => 'Post',
+    		'foreignKey' => 'user_id',
+            //'conditions' => array('Job.approved' => '1'),
+            'order' => 'Post.created DESC',
+        )
+    );
+
 	public $validate = array(
         'name' => array(
 			'required' => array(
@@ -23,7 +31,6 @@ class user extends AppModel {
         'birthdate'=> array(
             'allowEmpty' => true,
         	'rule' => 'date',
-            
         ),
         'password' => array(
             'required' => array(

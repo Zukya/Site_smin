@@ -1,4 +1,4 @@
-<!-- File: /app/View/Posts/index.ctp  (edit links added) -->
+<!-- File: /app/View/Posts/page.ctp  -->
 
 <style>
 .delinked {
@@ -79,13 +79,10 @@ echo $this->Html->link(
 			 { echo '</div><br><div class="row-fluid show-grid">';}
 			 ?>
 		<?php endforeach; ?>
-		
-		<?php echo $this->Paginator->prev(' << ' . __('previous'), array(), null, array('class' => 'prev disabled')); ?> -
-		<?php echo $this->Paginator->next(__('next') .  ' >> ', array(), null, array('class' => 'next disabled')); ?>
-		
 		</div>
 	</div>
-   <div class="span2">
+  
+ <div class="span2">
 	<div class="row-fluid show-grid"> 
 	 <div class="span3 text-center" style="color:white; background-color: #333;"><i class=" icon-search icon-white"></i></div>
 	 <div class="span3 text-center" style="color:white; background-color: #333;"><i class=" icon-camera icon-white"></i></div>
@@ -112,7 +109,12 @@ echo $this->Html->link(
 	</div>
 </div>
 </div>
-</div>
+
+
+
+
+
+
 
 
 
