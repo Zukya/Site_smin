@@ -266,6 +266,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				echo $this->Html->link('Jobs', '/Jobs', array('class' => 'button'));
 				echo ' - ';
 				echo $this->Html->link('Login', array('controller' => 'Users', 'action' => 'login') );
+				echo ' - ';
+				echo $this->Html->link('Register', array('controller' => 'Users', 'action' => 'add') );
 			}
 			?>	
 		<!-- </div> -->
