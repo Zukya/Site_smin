@@ -199,6 +199,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</style>
 </head>
 <body>
+	<div class="navbar-fixed-top" style="background-color:white;">
 	<div class="container">
 <?php 
 		//$url = $this->Html->url('/Users') ;
@@ -273,7 +274,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <h3 class="muted">Squarecom</h3>
       </div>
     </div>
-      
+     </div> 
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">

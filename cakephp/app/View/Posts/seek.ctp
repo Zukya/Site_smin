@@ -9,6 +9,21 @@
 	color: #333;
 	text-decoration:none;
 }
+.prev, .next {
+	background-color:rgb(45,255,45);
+	color : rgb(45,255,45);
+	width: 100%;
+	display:block;
+}
+.prev a, .next a {
+	width: 100%;
+	display:block;
+	color : rgb(45,255,45);
+}
+.fps {
+	background-color: rgb(255,90,0);
+	color : rgb(255,90,0);
+}
 </style>
 <?php 
 /*
@@ -79,10 +94,16 @@ echo $this->Html->link(
 			 { echo '</div><br><div class="row-fluid show-grid">';}
 			 ?>
 		<?php endforeach; ?>
-		
-		<?php echo $this->Paginator->prev(' << ' . __('previous'), array(), null, array('class' => 'prev disabled')); ?> -
-		<?php echo $this->Paginator->next(__('next') .  ' >> ', array(), null, array('class' => 'next disabled')); ?>
-		
+			<?php 
+			 if ($del % 2 != 0)
+			 { echo '</div><div class="row-fluid show-grid">'; }
+			 ?>
+		<div class="span6">
+			<?php echo $this->Paginator->prev( __(' z'), array(), null, array('class' => 'fps  prev disabled')); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->Paginator->next(__(' z') , array(), null, array('class' => ' fps next disabled')); ?>
+		</div>
 		</div>
 	</div>
  <div class="span2">
@@ -95,7 +116,12 @@ echo $this->Html->link(
 	 </div><hr>
 	 <div class="row-fluid show-grid">
 	  <div class="span12">
-	  <input style="max-width:90%;" type="text" placeholder="Nom d'article...">
+	  <!-- <input style="max-width:90%;" type="text" placeholder="Nom d'article...">  -->
+	  <?php
+		echo $this->Form->create('Post', array('action' => 'seek', 'type' => 'get'));
+		echo $this->Form->input('word', array('default' => 'Nom d\'article...'));
+		echo $this->Form->end('Save Post');
+		?>
 	<h3>Notes</h3>
 		<h1>Base de donnee</h1>
 		<p>
