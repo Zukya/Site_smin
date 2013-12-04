@@ -28,10 +28,17 @@ class User extends AppModel {
             'rule' => array('minLength', '3'),
             'message' => 'Minimum 3 characters long'    
         ),
-        'birthdate'=> array(
-            'allowEmpty' => true,
-        	'rule' => 'date',
+
+        	'birthdate'=> array(
+   			/*'rule'       => array('date', 'dMy'),*/
+         	'allowEmpty' => true
         ),
+
+       
+        
+       
+
+
         'password' => array(
             'required' => array(
                 'rule' => array('notEmpty'),

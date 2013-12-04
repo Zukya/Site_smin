@@ -11,11 +11,11 @@ public function view($id = null) {
             throw new NotFoundException(__('Invalid user'));
         }
 
-        $post = $this->Post->findById($id);
-        if (!$post) {
+        $user = $this->User->findById($id);
+        if (!$user) {
             throw new NotFoundException(__('Invalid user'));
         }
-        $this->set('post', $post);
+        $this->set('user', $user);
     }
     
 public function add() {
@@ -70,7 +70,7 @@ public function beforeFilter() {
 public function login() {
     if ($this->request->is('post')) {
         if ($this->Auth->login()) {
-            return $this->redirect($this->Auth->redirect());
+            return $this->redirect($this->Auth->redirect('./index'));
         }
         $this->Session->setFlash(__('Invalid username or password, try again'));
     }
