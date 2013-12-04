@@ -7,7 +7,7 @@
         'label' => 'Nom'
         ));
         echo $this->Form->input('fname', array(
-        'label' => 'Prénom'
+        'label' => 'Pr&eacutenom'
         ));
         echo $this->Form->input('username', array(
         'label' => 'Adresse e-mail',
@@ -18,7 +18,7 @@
         ));
         
         echo $this->Form->input('birthdate', array(
-     	'label' => 'Date de naissance'
+     	'label' => 'Date de naissance',
         'type'=>'date',
      	'dateFormat'=>'DMY',
      	'minYear'=>date('Y')-100,
@@ -30,12 +30,16 @@
         'label' => 'Ville'
         ));
         echo $this->Form->input('skills', array(
-        'label' => 'Compétences'
+        'label' => 'Comp&eacutetences'
         ));
         echo $this->Form->input('context', array(
-        'label' => 'Situation actuelle'
-        'options' => array('En recherche de CDI','En recherche de Stage','En recherche d alternance','Auto-Entrepreneur','Autre'),
-        'multiple' => 'multiple'
+        'label' => 'Situation actuelle',
+        'options' => array(
+        'En recherche de CDI' => 'En recherche de CDI',
+        'En recherche de Stage' => 'En recherche de Stage',
+        'En recherche d alternance' => 'En recherche d alternance',
+        'Auto-Entrepreneur' => 'Auto-Entrepreneur',
+        'Autre' => 'Autre')
         ));
         echo $this->Form->input('hobbies', array(
         'label' => 'Hobbies'

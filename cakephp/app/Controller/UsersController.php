@@ -30,15 +30,17 @@ public function add() {
         }
     }
  
-public function edit($id = null) {
-        $this->User->id = $id;
+public function edit() {
+        $id = $this->Auth->user('id');
+		$this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved'));
-                return $this->redirect(array('action' => 'index'));
+                $this->redirect('../');
+                //return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
         } else {
