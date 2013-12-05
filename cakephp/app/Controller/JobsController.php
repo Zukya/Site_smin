@@ -23,6 +23,11 @@ class JobsController extends AppController {
         $this->set('job', $job);
     }
     
+    public function index_adm() {
+    	$this->set('jobs', $this->Job->find('all'));
+    
+    }
+    
     public function add() {
     	if ($this->request->is('Post')) {
     		$this->Job->create();

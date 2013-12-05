@@ -6,6 +6,10 @@ class UsersController extends AppController {
 		$this->set('Users', $this->User->find('all'));
 	}
 	
+	public function index_adm() {
+		$this->set('Users', $this->User->find('all'));
+	}
+	
 public function view($id = null) {
         if (!$id) {
             throw new NotFoundException(__('Invalid user'));

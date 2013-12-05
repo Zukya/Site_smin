@@ -53,9 +53,7 @@
         echo $this->Form->input('avatar');
         
           
-    
-   // echo $this->Form->input('body', array('rows' => '3'));
-    echo $this->Form->end('Sauvegarder le Post');
+   
     ?>
     
     

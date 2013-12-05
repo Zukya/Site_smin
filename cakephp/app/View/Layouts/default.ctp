@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  *
  * PHP 5
@@ -227,8 +227,40 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			// Permet de voir toutes les donnees lies au compte
 			$option = "'class' => 'button'";
 			$fname = $this->Session->read('Auth.User.fname');
-			if (isset($fname))
+			$level = $this->Session->read('Auth.User.level');
+			if (isset($fname)) // Verifie si l'utilisateur est connecté
 			{
+				if($level==0){ // Vérifie si c'est un admin
+	
+				echo $tab[0];	
+				echo $this->Html->link( "Accueil", "/", array("class" => "button", "escape" => false)
+					);
+				echo '</li>';
+				echo $tab[1];
+				echo $this->Html->link('Utilisateurs', '/Users', array('class' => 'button')); 
+				echo '</li>'; //Faire un onglet utilisateur avec 2 sous menus (déroulant) : vue utilisateur, vue admin
+				echo '<li>';
+				echo $this->Html->link('Utilisateurs Admin', '/Users/index_adm', array('class' => 'button')); 
+				echo '</li>';
+				echo $tab[2];
+				echo $this->Html->link('Offres d emplois', '/Jobs', array('class' => 'button'));
+				echo '</li>';//Faire un onglet offres d'emplois avec 2 sous menus (déroulant) : vue utilisateur, vue admin
+				echo '<li>';
+				echo $this->Html->link('Offres d emplois Admin', '/Jobs/index_adm', array('class' => 'button'));
+				echo '</li>';
+				echo $tab[3];
+				echo $this->Html->link('Profil', '/Users/edit', array('class' => 'button'));
+				echo '</li>';
+				echo '<li>';
+				echo $this->Html->link('Se déconnecter', array('controller' => 'Users', 'action' => 'logout') );
+				echo '</li>';
+					
+					
+					
+				}
+				
+				else { // Si ce n'est pas un admin
+					
 				//echo '<h2>Vous &ecirc;tes connect&eacute; en tant que ';
 				//echo $this->Session->read('Auth.User.fname');
 				//echo ' ';
@@ -257,7 +289,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				echo $this->Html->link('Logout', array('controller' => 'Users', 'action' => 'logout') );
 				echo '</li>';
 				//echo '</p>'; 
-			} else  { 
+				
+				
+				
+				
+				
+			}
+			} else  {     //S'il n'est pas connecté 
 				echo $this->Html->link('Home', '/', array('class' => 'button'));
 				echo ' - ';
 				echo $this->Html->link('Posts', '/Posts', array('class' => 'button'));

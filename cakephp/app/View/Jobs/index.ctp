@@ -1,5 +1,7 @@
 <!-- File: /app/View/Jobs/index.ctp  (edit links added) -->
 
+
+
 <h1>Blog jobs</h1>
 <p><?php echo $this->Html->link("Add Job", array('action' => 'add')); ?></p>
 <table>
@@ -10,7 +12,7 @@
         <th>Firm</th>
         <th>Contract</th>
         <th>Option</th>
-        <th>Checked</th>
+        <th>Approved</th>
         <th>Created</th>
         <th>Modified</th>
     </tr> 
@@ -26,7 +28,7 @@
         <td>
 			<?php echo $this->Html->link('Edit', array('action' => 'edit', $job['Job']['id'])); ?>
         </td>
-        <td><?php if ($job['Job']['checked']==0) { echo 'Unchecked';} else echo 'Checked'; ?></td>
+        <td><?php if ($job['Job']['approved']==0) { echo 'Not approved';} else echo 'Approved'; ?></td>
         <td><?php echo $job['Job']['created']; ?></td>
         <td><?php echo $job['Job']['modified']; ?></td>
     </tr>
