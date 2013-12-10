@@ -43,7 +43,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<style>
       body {
         padding-top: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 0px;
       }
 
       /* Custom container */
@@ -199,29 +199,32 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	</style>
 </head>
 <body>
-	<div class="navbar-fixed-top" style="background-color:white;">
+	<div class="navbar-fixed-top" style="background-color:white; box-shadow:0px 5px 5px #666;">
 	<div class="container">
 <?php 
 		//$url = $this->Html->url('/Users') ;
 		//$active = $this->request->here == $url? true: false;
 		$tab = array(
-			0=>"/",
+			0=>"/Posts",
 			1=>"/Users",
 			2=>"/Jobs",
 			3=>"/Users/edit");
 		for ($i = 0; $i < count($tab) ; $i++) {
 			$url = $this->Html->url($tab[$i]);
-			$active = $this->request->here == $url? true: false; 
+			//$active = $this->request->here == $url? true: false; 
+  $active = stristr($this->request->here,$url)? true: false; 
 			if ($active) {$tab[$i]="<li class='active'>";}
 			else {$tab[$i]="<li>";}
 		}
+
+    if ($this->request->here==$this->Html->url("/"))
+      $tab[0]="<li class='active'>";
+
 		// var_dump($tab);
 		?>
 	<div class="masthead">
         <ul class="nav nav-pills pull-right">
-		<!-- <div id="header"> -->
-		<?php if ($tab[0]=="active") {$option. ", active";} ?>
-			
+		<!-- <div id="header"> -->			
 		<?php 
 			//var_dump($this->Session->read());
 			// Permet de voir toutes les donnees lies au compte
@@ -364,16 +367,26 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		<!-- </div> -->
-		<div id="footer">
-			<?php echo $this->Html->link(
+
+			<?php /*echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
 					'http://www.cakephp.org/',
 					array('target' => '_blank', 'escape' => false)
-				);
+				);*/
 			?>
-		</div>
+		
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+  <div id="footer" style="color:white; text-align:center; background-color:#333;"><br/>
+    Blog - Utilisateurs - Offres d'emplois - Profil - Flux RSS
+<br/>
+
+A propos de SquareCom - Conditions G&eacute;n&eacute;rales - Mentions L&eacute;ales
+<br/>
+&copy; SQUARECOM 2013 / Droits de reproduction et de diffusion r&eacute;serv&eacute;s / Usage strictement personnel
+<br/><br/>
+<div style="min-height:125px;"></div>
+  </div>
+	<?php //echo $this->element('sql_dump'); ?>
 	
 	<script>
 		$(".alert").alert();

@@ -1,6 +1,13 @@
 <!-- File: /app/View/Jobs/index.ctp  (edit links added) -->
 
-
+<div class="row-fluid show-grid">
+    <div class="span12">
+        <h1 class="text-center" style="font-weight:100;">Les Offres d'Emplois</h1> 
+        <h5 class="text-center" style="color:#888;font-weight:100;">
+« Le treizième travail d'Hercule : trouver un emploi. » </h5>
+        <hr>
+    </div> 
+</div>
 
 <h1>Blog jobs</h1>
 <p><?php echo $this->Html->link("Add Job", array('action' => 'add')); ?></p>

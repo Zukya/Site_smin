@@ -10,6 +10,13 @@ class User extends AppModel {
             'order' => 'Post.created DESC',
         )
     );
+      public $actsAs = array(
+        'Upload.Upload' => array(
+            'fields' => array(
+            'avatar' => 'img/avatar/:id'
+            )
+        )
+    );
 
 	public $validate = array(
         'name' => array(
@@ -33,12 +40,6 @@ class User extends AppModel {
    			/*'rule'       => array('date', 'dMy'),*/
          	'allowEmpty' => true
         ),
-
-       
-        
-       
-
-
         'password' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
@@ -69,10 +70,11 @@ class User extends AppModel {
         'hobbies' => array(
         	'allowEmpty' => true
         ),*/
-        'avatar' => array (
-        	'allowEmpty' => true,
-        	'rule' => 'url'
-        )
+         'avatar_file' => array(
+            'rule' => array('fileExtension', array('jpg','png')),
+            'message' => 'blbal',
+            'allowEmpty' => true,
+        ),
         	
         	
         	   

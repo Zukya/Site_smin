@@ -1,6 +1,6 @@
 <!-- app/View/Users/add.ctp -->
 <div class="users form">
-<?php echo $this->Form->create('User'); ?>
+<?php echo $this->Form->create('User', array('class'=>'form-horizontal','type'=>'file')); ?>
     <fieldset>
         <legend><?php echo __('Add User'); ?></legend>
         <?php echo $this->Form->input('name', array(
@@ -39,13 +39,21 @@
         'En recherche de Stage' => 'En recherche de Stage',
         'En recherche d alternance' => 'En recherche d alternance',
         'Auto-Entrepreneur' => 'Auto-Entrepreneur',
+        'Eudiant' => 'Eudiant'
+        'Employe' => 'Employe'
         'Autre' => 'Autre')
         ));
         echo $this->Form->input('hobbies', array(
         'label' => 'Hobbies'
         ));
-        echo $this->Form->input('avatar');
-    ?>
+        echo $this->Form->input('avatar_file', 
+        array(  'label'         => array('class'=>'control-label', 'text'=>'Image'),
+                'type'          => 'file',
+                'before'        => '',
+                'after'         => '</div>',
+                'between'       => '<div class=\'controls\'>',
+                'div'           => array('class' => 'control-group')));
+        ?>
     </fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>

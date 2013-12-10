@@ -1,5 +1,14 @@
 <!-- File: /app/View/Posts/index.ctp  (edit links added) -->
 
+<div class="row-fluid show-grid">
+    <div class="span12">
+        <h1 class="text-center" style="font-weight:100;">Les Membres de Squarecom</h1> 
+        <h5 class="text-center" style="color:#888;font-weight:100;">
+« Une communauté se reconnaît dans les plus entreprenants et les plus inventifs d’entre les siens. »   </h5>
+        <hr>
+    </div> 
+</div> 
+
 <h1>Users</h1>
 
 <table>

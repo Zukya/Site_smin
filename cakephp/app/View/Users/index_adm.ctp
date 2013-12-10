@@ -1,5 +1,16 @@
 <!-- File: /app/View/Posts/index.ctp  (edit links added) -->
 
+<div class="row-fluid show-grid">
+    <div class="span12">
+        <h1 class="text-center" style="font-weight:100;">Les Membres de Squarecom <br/>(MODE EDITION)</h1> 
+        <h5 class="text-center" style="color:#888;font-weight:100;">
+« L'abondance est le fruit d'une bonne administration. »  </h5>
+        <hr>
+    </div> 
+</div> 
+
+
+
 <h1>Users</h1>
 
 <table>

@@ -1,6 +1,15 @@
 <!-- File: /app/View/Users/view.ctp -->
 
-<img src="<?php echo $user['User']['avatar'];?>" />
+<?php
+	if(!isset($user['User']['avatar'])) 
+		echo $this->Html->image('http://placehold.it/475x235', array('alt' => 'Image de base'));
+	else {
+		echo $this->Html->image($user['User']['avatar'], array('alt' => 'CakePHP','class'=>'img_post img-polaroid',
+			'style'=>'min-height:200px; height:200px; width:200px; min-width:200px;'
+			)); 
+	} 
+?>
+
 
 <h1><?php echo h($user['User']['name']); echo h($user['User']['fname']);?></h1>
 
@@ -10,7 +19,7 @@
 
 <p>Ville : <?php echo $user['User']['city'];?> </p>
 
-<p>Compétences : <?php echo $user['User']['skills'];?> </p>
+<p>Comp&eacute;tences : <?php echo $user['User']['skills'];?> </p>
 
 <p>Situation actuelle : <?php echo $user['User']['context'];?> </p>
 

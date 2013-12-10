@@ -13,6 +13,8 @@ class PostsController extends AppController {
         'order' => array(
             'Post.created' => 'desc'
         ),  
+        'update' => '#content',
+        'evalScripts' => true
     );
     
     /*
@@ -43,7 +45,14 @@ class PostsController extends AppController {
     	//if ($this->request->is('post')) {
     	if (isset($_GET['word']))
     		$word = $_GET['word'];
-    		$this->Paginator->settings = array('conditions' => array('Post.title LIKE' => '%'.$word.'%'),'limit' => 4,'order' => array('Post.created' => 'desc'));
+    		$this->Paginator->settings = array('conditions' => array(
+            array('Post.title LIKE','Post.fname LIKE','Post.name LIKE') => '%'.$word.'%'),
+            'limit' => 4,
+            'order' => array('Post.created' => 'desc'));
+
+
+//                'Post.title LIKE' => '%'.$word.'%'),'limit' => 4,'order' => array('Post.created' => 'desc'));
+
     		$posts = $this->Paginator->paginate('Post');
     		$this->set('posts', $posts);
     	//}
@@ -70,15 +79,36 @@ class PostsController extends AppController {
      */
     public function add() {
     	if ($this->request->is('post')) {
-    		$this->Post->create();
-    		if ($this->Post->save($this->request->data)) {
-    			$this->Session->setFlash(__('Your post has been saved.'));
-    			return $this->redirect(array('action' => 'index'));
-    		}
-    		$this->Session->setFlash(__('Unable to add your post.'));
-    	}
+            $this->Post->create();
+	        if ($this->Post->save($this->request->data)) {
+                $this->Session->setFlash(__('Votre article a été ajouté.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+             $this->Session->setFlash(__('Nous sommes dans l\'incapacité d\'ajouter votre article.'));
+        }
+            //$this->Session->setFlash(__('Probleme majeur durant la creation de l\'article.'));
     }
-    
+    /*
+    public function add() {
+        if ($this->request->is('post')) {
+            //$this->request->data['Post']['image'] = $this->request->data['Post']['image_file'];
+            $this->Post->create();
+            //debug($this->request->data);
+            //die();
+            //debug($this->request->data);
+            //die();
+           // if (!empty($this->request->data)) {
+            if ($this->Post->save($this->request->data)) {
+                $this->Session->setFlash(__('Votre article a été ajouté.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            else {    
+                $this->Session->setFlash(__('Nous sommes dans l\'incapacité d\'ajouter votre article.'));
+            }
+        }
+            //$this->Session->setFlash(__('Probleme majeur durant la creation de l\'article.'));
+    }
+    */
     /*
      * Fonction d'edition d'un article
      */

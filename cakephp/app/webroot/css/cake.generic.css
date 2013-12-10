@@ -22,6 +22,7 @@
 }
 
 /** General Style Info **/
+
 body {
 	background: #003d4c;
 	color: #fff;
@@ -257,6 +258,7 @@ dd {
 }
 
 /** Forms **/
+/*
 form {
 	clear: both;
 	margin-right: 20px;
@@ -285,11 +287,14 @@ fieldset fieldset div {
 	clear: left;
 	margin: 0 20px;
 }
+
 form div {
+
 	clear: both;
 	margin-bottom: 1em;
 	padding: .5em;
 	vertical-align: text-top;
+	
 }
 form .input {
 	color: #444;
@@ -307,11 +312,13 @@ form div.submit {
 	clear: both;
 	margin-top: 10px;
 }
+
 label {
 	display: block;
 	font-size: 110%;
 	margin-bottom:3px;
 }
+
 input, textarea {
 	clear: both;
 	font-size: 140%;
@@ -369,7 +376,9 @@ form .submit input[type=submit] {
 form .submit input[type=submit]:hover {
 	background: #5BA150;
 }
+*/
 /* Form errors */
+/*
 form .error {
 	background: #FFDACC;
 	-moz-border-radius: 4px;
@@ -397,8 +406,9 @@ form .error-message {
 	box-shadow: none;
 	text-shadow: none;
 }
-
+*/
 /** Notices and Errors **/
+/*
 .message {
 	clear: both;
 	color: #fff;
@@ -488,7 +498,7 @@ p.error em {
 .success {
 	color: #fff;
 }
-
+*/
 /**  Actions  **/
 .actions ul {
 	margin: 0;
@@ -507,7 +517,7 @@ p.error em {
 }
 
 /* Buttons and button links */
-input[type=submit],
+/*input[type=submit],*/
 .actions ul li a,
 .actions a {
 	font-weight:normal;
@@ -539,7 +549,7 @@ input[type=submit],
 	border-color: #acacac;
 	text-decoration: none;
 }
-input[type=submit]:active,
+/*input[type=submit]:active*/,
 .actions ul li a:active,
 .actions a:active {
 	background: #eee;

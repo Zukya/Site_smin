@@ -1,5 +1,13 @@
 <!-- File: /app/View/Jobs/index_adm.ctp  (edit links added) -->
 
+<div class="row-fluid show-grid">
+    <div class="span12">
+        <h1 class="text-center" style="font-weight:100;">Les Offres d'Emplois <br/> (MODE EDITION)</h1> 
+        <h5 class="text-center" style="color:#888;font-weight:100;">
+« Nous n'avons point d'Etat. Nous avons des administrations. » </h5>
+        <hr>
+    </div> 
+</div>
 
 
 <h1>Blog jobs</h1>
